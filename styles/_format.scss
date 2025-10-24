@@ -1,0 +1,152 @@
+.format {
+    background-color: var(--color-white);
+    &_container {
+        padding: 60px 0 122px;
+    }
+
+    &_column {
+        &__first {
+            width: 560px;
+        }
+        &__second {
+            width: 185px;
+        }
+        &__third {
+            width: 185px;
+        }
+        &__fourth {
+            width: 185px;
+        }
+        &__hit {
+            width: 270px;
+        }
+    }
+
+    &_grid {
+        &__top {
+            width: fit-content;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        &__row {
+            width: fit-content;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        &__bonus {
+            padding: 10px;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            transform: translate(-50%, -50%);
+            background-color: var(--color-blue);
+            border-radius: 14px;
+        }
+        &__title {
+            font-size: 46px;
+            font-weight: 400;
+            line-height: 1.2;
+            & span {
+                font-weight: 800;
+            }
+        }
+        &__plan {
+            position: relative;
+            background-color: var(--color-bg-grid);
+            border-radius: 24px 24px 0 0;
+            & h3 {
+                margin: 51px auto 0;
+                width: fit-content;
+                font-size: 28px;
+                font-weight: 700;
+            } 
+            & h5 {
+                margin: 32px auto 12px;
+                max-width: 90px;
+                font-size: 10px;
+                line-height: 1.2;
+                font-weight: 600;
+                text-align: center;
+            }
+        }
+        &__best {
+            display: none;
+        }
+    }
+
+    &_bottom {
+        margin: 40px auto 0;
+        width: 1200px;
+        display: flex;
+    }
+    &_dial {
+        &__title {
+            color: var(--color-black);
+        }
+        &__digit,
+        &__semicolon div {
+            background-color: #E8DDF3;
+        }
+    }
+    &_price {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        &__old {
+            font-size: 20px;
+            line-height: 24px;
+            text-decoration: line-through;
+        }
+        &__new {
+            font-size: 20px;
+            & span {
+                font-size: 42px;
+                font-weight: 800;
+            }
+        }
+        &__btn {
+            margin-top: 20px;
+            padding: 16px 28px;
+            font-weight: 600;
+            border-radius: 8px;
+        }
+        &__quantity {
+            margin-top: 12px;
+            font-size: 12px;
+            line-height: 1.2;
+            font-weight: 400;
+            & span {
+                font-weight: 700;
+            }
+        }
+        &__orange {
+            color: var(--color-orange-dark);
+            & button {
+                background-color: var(--color-orange-dark);
+            }
+        }
+        &__violet {
+            color: var(--color-violet);
+            & button {
+                background-color: var(--color-violet);
+            }
+        }
+        &__blue {
+            color: var(--color-blue);
+            & button {
+                background-color: var(--color-blue);
+            }
+        }
+        &__old {
+            color: var(--color-black);
+        }
+    }
+}
