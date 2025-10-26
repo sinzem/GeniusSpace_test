@@ -51,12 +51,18 @@
         background-color: rgba(0,0,0,.2);
     }
     &_module {
+        transition: all .3s ease;
         &__wrapper {
             padding: 40px 60px;
+            transition: all .3s ease;
         }
         &__top {
             display: flex;
             justify-content: space-between;
+            transition: all .3s ease;
+            & svg path, & svg rect {
+                transition: all .3s ease;
+            }
         }
         &__description {
             display: flex;
@@ -68,10 +74,12 @@
             font-size: 32px;
             line-height: 38px;
             font-weight: 700;
+            transition: all .3s ease;
         }
         &__quantity {
             display: flex;
             gap: 12px;
+            transition: all .3s ease;
             & div {
                 padding: 6px 16px;
                 display: flex;
@@ -79,11 +87,18 @@
                 align-items: center;
                 border: 1px solid rgba(0,0,0,.2);
                 border-radius: 22px;
+                transition: all .3s ease;
             }
         }
         &__btns {
             display: flex;
             gap: 116px;
+            & svg {
+                transition: all .3s ease;
+                & path {
+                    transition: all .3s ease;
+                }
+            }
         }
         &__btn {
             width: 120px;
@@ -96,6 +111,7 @@
             color: var(--color-white);
             font-size: 16px;
             font-weight: 500;
+            transition: all .3s ease;
         }
         &__bottom {
             display: none;
@@ -112,7 +128,7 @@
                 border-radius: 20px;
             }
             &__top {
-                background-color: var(--color-violet);
+                // background-color: var(--color-violet);
                 color: var(--color-white);
                 & svg path, & svg rect {
                     fill: var(--color-white);
@@ -155,6 +171,12 @@
             gap: 16px;
             overflow: hidden;
         }
+        &__about {
+            display: none;
+            &.active {
+                display: block;
+            }
+        }
         &__item {
             & button {
                 margin-left: 0px;
@@ -162,6 +184,7 @@
                 font-weight: 700;
                 background-color: transparent;
                 position: relative;
+                transition: all .3s ease;
                 & span {
                     color: var(--color-violet);
                 }

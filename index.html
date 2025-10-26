@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="uk">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +11,7 @@
     <meta property="og:description" content="Тестове завдання для GeniusSpace">
     <meta property="og:image" content="./assets/png/banner_grid_stain.png">
     
-    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/style.min.css">
     <link rel="shortcut icon" href="./assets/png/menu_logo_heart.png">
 
     <script defer src="./scripts/main.js"></script>
@@ -67,10 +67,10 @@
                 </div>
             </div>
             <ul class="menu_list">
-                <li class="menu_item active"><a href="#header">Спікери</a></li>
-                <li class="menu_item"><a href="#course">Програма</a></li>
-                <li class="menu_item"><a href="#packages">Пакети</a></li>
-                <li class="menu_item"><a href="#format">Записатись</a></li>
+                <li data-menu="header" class="menu_item active"><a href="#header">Спікери</a></li>
+                <li data-menu="course" class="menu_item"><a href="#course">Програма</a></li>
+                <li data-menu="packages" class="menu_item"><a href="#packages">Пакети</a></li>
+                <li data-menu="format" class="menu_item"><a href="#format">Записатись</a></li>
             </ul>
             <div class="btn menu_btn">
                 <a href="#format">Записатися на курс</a>
@@ -78,7 +78,7 @@
         </div>
     </section>
 
-    <header id="header" class="header">
+    <header data-section="header" id="header" class="header">
         <div class="header_rounds header_rounds__first">
             <div class="header_rounds header_rounds__second">
                 <div class="header_rounds header_rounds__third"></div>
@@ -174,7 +174,7 @@
         </div>
     </header>
 
-    <section id="course" class="course">
+    <section data-section="course" id="course" class="course">
         <div class="container course_container">
             <div class="course_top">
                 <div class="course_top__base">
@@ -252,55 +252,153 @@
                                 <div class="course_lessons__title">Уроки модулю</div>
                                 <ul class="course_lessons__list">
                                     <li class="course_lessons__item active">
-                                        <button class="course_lessons__btn">
-                                            <span>21 / </span> Вступ до GPT та вибір ніші
+                                        <button data-lesson="11" class="course_lessons__btn">
+                                            <span>11 / </span> Вступ до GPT та вибір ніші
                                         </button>
                                     </li>
                                     <li class="course_lessons__item">
-                                        <button class="course_lessons__btn">
-                                            <span>22 / </span> Аналіз конкурентів з допомогою ШІ
+                                        <button data-lesson="12" class="course_lessons__btn">
+                                            <span>12 / </span> Аналіз конкурентів з допомогою ШІ
                                         </button>
                                     </li>
                                     <li class="course_lessons__item">
-                                        <button class="course_lessons__btn">
-                                            <span>23 / </span> Побудова контент-плану
+                                        <button data-lesson="13" class="course_lessons__btn">
+                                            <span>13 / </span> Побудова контент-плану
                                         </button>
                                     </li>
                                     <li class="course_lessons__item">
-                                        <button class="course_lessons__btn">
-                                            <span>24 / </span> Сторітейлінг зі штучним інтелектом
+                                        <button data-lesson="14" class="course_lessons__btn">
+                                            <span>14 / </span> Сторітейлінг зі штучним інтелектом
                                         </button>
                                     </li>
                                     <li class="course_lessons__item">
-                                        <button class="course_lessons__btn">
-                                            <span>25 / </span> Оптимізація сторіс
+                                        <button data-lesson="15" class="course_lessons__btn">
+                                            <span>15 / </span> Оптимізація сторіс
                                         </button>
                                     </li>
                                 </ul>
                             </div>
 
-                            <div class="course_lessons__about">
-                                <div class="course_lessons__title">Про що урок:</div>
-                                <div class="course_lessons__description">
-                                    <p>На цьому уроці ви дізнаєтесь, як працює ChatGPT і які можливості він відкриває для створення контенту, роботи в соціальних мережах та вирішення бізнес-завдань. Основна увага приділяється вибору ніші для вашої діяльності — це допоможе ефективніше застосовувати інструменти штучного інтелекту та будувати стратегію розвитку.</p>
+                            <div class="course_lessons__abouts">
+                                <div data-about="11" class="course_lessons__about active">
+                                    <div class="course_lessons__title">Про що урок:</div>
+                                    <div class="course_lessons__description">
+                                        <p>На цьому уроці ви дізнаєтесь, як працює ChatGPT і які можливості він відкриває для створення контенту, роботи в соціальних мережах та вирішення бізнес-завдань. Основна увага приділяється вибору ніші для вашої діяльності — це допоможе ефективніше застосовувати інструменти штучного інтелекту та будувати стратегію розвитку.</p>
+                                    </div>
+                                    <div class="course_lessons__results">
+                                        <h3>В результаті навчання ви:</h3>
+                                        <div class="course_lessons__result">
+                                            <div class="course_lessons__dot"></div>
+                                            <h4>Ви зрозумієте, як працює GPT і які завдання він може вирішувати у різних сферах.</h4>
+                                        </div>
+                                        <div class="course_lessons__result">
+                                            <div class="course_lessons__dot"></div>
+                                            <h4>Навчитесь визначати та обирати нішу, яка найкраще підходить саме вам.</h4>
+                                        </div>
+                                        <div class="course_lessons__result">
+                                            <div class="course_lessons__dot"></div>
+                                            <h4>Зможете створити основу для подальшого просування у вибраній ніші з допомогою AI.</h4>
+                                        </div>
+                                    </div>
+                                    <div class="btn course_lessons__button">
+                                        <a href="#format">Забронювати місце на курс</a>
+                                    </div>
                                 </div>
-                                <div class="course_lessons__results">
-                                    <h3>В результаті навчання ви:</h3>
-                                    <div class="course_lessons__result">
-                                        <div class="course_lessons__dot"></div>
-                                        <h4>Ви зрозумієте, як працює GPT і які завдання він може вирішувати у різних сферах.</h4>
+                                <div data-about="12" class="course_lessons__about">
+                                    <div class="course_lessons__title">Про що урок:</div>
+                                    <div class="course_lessons__description">
+                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur, repudiandae eligendi! Doloribus veniam possimus voluptatem dicta dolores laboriosam aperiam fuga doloremque repellat quia modi, sequi officia similique distinctio suscipit illo inventore, dolore, accusamus iusto et dolorem a magnam. Maxime quibusdam sapiente ipsa deleniti, laudantium odit ipsam similique nesciunt sit nulla!.</p>
                                     </div>
-                                    <div class="course_lessons__result">
-                                        <div class="course_lessons__dot"></div>
-                                        <h4>Навчитесь визначати та обирати нішу, яка найкраще підходить саме вам.</h4>
+                                    <div class="course_lessons__results">
+                                        <h3>В результаті навчання ви:</h3>
+                                        <div class="course_lessons__result">
+                                            <div class="course_lessons__dot"></div>
+                                            <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, in?</h4>
+                                        </div>
+                                        <div class="course_lessons__result">
+                                            <div class="course_lessons__dot"></div>
+                                            <h4>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor modi a quidem, exercitationem ullam reiciendis.</h4>
+                                        </div>
+                                        <div class="course_lessons__result">
+                                            <div class="course_lessons__dot"></div>
+                                            <h4>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero doloribus dolores aliquam!</h4>
+                                        </div>
                                     </div>
-                                    <div class="course_lessons__result">
-                                        <div class="course_lessons__dot"></div>
-                                        <h4>Зможете створити основу для подальшого просування у вибраній ніші з допомогою AI.</h4>
+                                    <div class="btn course_lessons__button">
+                                        <a href="#format">Забронювати місце на курс</a>
                                     </div>
                                 </div>
-                                <div class="btn course_lessons__button">
-                                    <a href="#format">Забронювати місце на курс</a>
+                                <div data-about="13" class="course_lessons__about">
+                                    <div class="course_lessons__title">Про що урок:</div>
+                                    <div class="course_lessons__description">
+                                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet maxime voluptatibus repellat laborum repudiandae molestiae placeat tempora? Nihil voluptate tenetur aliquid explicabo ipsa praesentium magni, provident incidunt ab asperiores fugit officiis placeat eius iusto officia vitae libero quo a minus enim nisi qui cumque natus?</p>
+                                    </div>
+                                    <div class="course_lessons__results">
+                                        <h3>В результаті навчання ви:</h3>
+                                        <div class="course_lessons__result">
+                                            <div class="course_lessons__dot"></div>
+                                            <h4>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</h4>
+                                        </div>
+                                        <div class="course_lessons__result">
+                                            <div class="course_lessons__dot"></div>
+                                            <h4>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum atque tempora asperiores error, enim distinctio dolorem earum. Voluptate, vero molestias?</h4>
+                                        </div>
+                                        <div class="course_lessons__result">
+                                            <div class="course_lessons__dot"></div>
+                                            <h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero, adipisci natus.</h4>
+                                        </div>
+                                    </div>
+                                    <div class="btn course_lessons__button">
+                                        <a href="#format">Забронювати місце на курс</a>
+                                    </div>
+                                </div>
+                                <div data-about="14" class="course_lessons__about">
+                                    <div class="course_lessons__title">Про що урок:</div>
+                                    <div class="course_lessons__description">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda reiciendis consequatur laborum eum illum voluptatibus, quod veniam et vel dolores asperiores sapiente consectetur ducimus animi nihil! Suscipit accusamus maxime quod dolorum non sequi rerum doloremque repellendus minus alias nihil, id exercitationem recusandae, praesentium officia est veritatis possimus eligendi vel officiis hic dolor? Saepe, a dignissimos explicabo ratione harum quia dicta.</p>
+                                    </div>
+                                    <div class="course_lessons__results">
+                                        <h3>В результаті навчання ви:</h3>
+                                        <div class="course_lessons__result">
+                                            <div class="course_lessons__dot"></div>
+                                            <h4>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reiciendis vero fuga exercitationem repellat.</h4>
+                                        </div>
+                                        <div class="course_lessons__result">
+                                            <div class="course_lessons__dot"></div>
+                                            <h4>Lorem ipsum dolor sit amet.</h4>
+                                        </div>
+                                        <div class="course_lessons__result">
+                                            <div class="course_lessons__dot"></div>
+                                            <h4>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatem maxime velit aliquid minima perspiciatis!</h4>
+                                        </div>
+                                    </div>
+                                    <div class="btn course_lessons__button">
+                                        <a href="#format">Забронювати місце на курс</a>
+                                    </div>
+                                </div>
+                                <div data-about="15" class="course_lessons__about">
+                                    <div class="course_lessons__title">Про що урок:</div>
+                                    <div class="course_lessons__description">
+                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, voluptates amet! Ipsam quibusdam quo, laborum accusantium sit dolor temporibus, porro libero architecto exercitationem tenetur debitis? Facere obcaecati ad aut soluta.</p>
+                                    </div>
+                                    <div class="course_lessons__results">
+                                        <h3>В результаті навчання ви:</h3>
+                                        <div class="course_lessons__result">
+                                            <div class="course_lessons__dot"></div>
+                                            <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis doloremque tempore delectus consectetur est excepturi, velit ipsa?</h4>
+                                        </div>
+                                        <div class="course_lessons__result">
+                                            <div class="course_lessons__dot"></div>
+                                            <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet aut dolore aspernatur.</h4>
+                                        </div>
+                                        <div class="course_lessons__result">
+                                            <div class="course_lessons__dot"></div>
+                                            <h4>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut optio minus aspernatur velit voluptate ipsum.</h4>
+                                        </div>
+                                    </div>
+                                    <div class="btn course_lessons__button">
+                                        <a href="#format">Забронювати місце на курс</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -337,7 +435,7 @@
                                     </div>
                                 </div>
                                 <div class="course_module__btns">
-                                    <button class="course_module__btn">Менше</button>
+                                    <button class="course_module__btn">Бiльше</button>
                                     <svg width="19" height="19" viewBox="0 0 19 19" fill="none">
                                         <path d="M17.5 1.06067L1.5 17.0607M1.5 17.0607H17.5M1.5 17.0607V1.06067" stroke="black" stroke-width="3"/>
                                     </svg>
@@ -350,55 +448,153 @@
                                 <div class="course_lessons__title">Уроки модулю</div>
                                 <ul class="course_lessons__list">
                                     <li class="course_lessons__item active">
-                                        <button class="course_lessons__btn">
+                                        <button data-lesson="21" class="course_lessons__btn">
                                             <span>21 / </span> Вступ до GPT та вибір ніші
                                         </button>
                                     </li>
                                     <li class="course_lessons__item">
-                                        <button class="course_lessons__btn">
+                                        <button data-lesson="22" class="course_lessons__btn">
                                             <span>22 / </span> Аналіз конкурентів з допомогою ШІ
                                         </button>
                                     </li>
                                     <li class="course_lessons__item">
-                                        <button class="course_lessons__btn">
+                                        <button data-lesson="23" class="course_lessons__btn">
                                             <span>23 / </span> Побудова контент-плану
                                         </button>
                                     </li>
                                     <li class="course_lessons__item">
-                                        <button class="course_lessons__btn">
+                                        <button data-lesson="24" class="course_lessons__btn">
                                             <span>24 / </span> Сторітейлінг зі штучним інтелектом
                                         </button>
                                     </li>
                                     <li class="course_lessons__item">
-                                        <button class="course_lessons__btn">
+                                        <button data-lesson="25" class="course_lessons__btn">
                                             <span>25 / </span> Оптимізація сторіс
                                         </button>
                                     </li>
                                 </ul>
                             </div>
 
-                            <div class="course_lessons__about">
-                                <div class="course_lessons__title">Про що урок:</div>
-                                <div class="course_lessons__description">
-                                    <p>На цьому уроці ви дізнаєтесь, як працює ChatGPT і які можливості він відкриває для створення контенту, роботи в соціальних мережах та вирішення бізнес-завдань. Основна увага приділяється вибору ніші для вашої діяльності — це допоможе ефективніше застосовувати інструменти штучного інтелекту та будувати стратегію розвитку.</p>
+                            <div class="course_lessons__abouts">
+                                <div data-about="21" class="course_lessons__about active">
+                                    <div class="course_lessons__title">Про що урок:</div>
+                                    <div class="course_lessons__description">
+                                        <p>На цьому уроці ви дізнаєтесь, як працює ChatGPT і які можливості він відкриває для створення контенту, роботи в соціальних мережах та вирішення бізнес-завдань. Основна увага приділяється вибору ніші для вашої діяльності — це допоможе ефективніше застосовувати інструменти штучного інтелекту та будувати стратегію розвитку.</p>
+                                    </div>
+                                    <div class="course_lessons__results">
+                                        <h3>В результаті навчання ви:</h3>
+                                        <div class="course_lessons__result">
+                                            <div class="course_lessons__dot"></div>
+                                            <h4>Ви зрозумієте, як працює GPT і які завдання він може вирішувати у різних сферах.</h4>
+                                        </div>
+                                        <div class="course_lessons__result">
+                                            <div class="course_lessons__dot"></div>
+                                            <h4>Навчитесь визначати та обирати нішу, яка найкраще підходить саме вам.</h4>
+                                        </div>
+                                        <div class="course_lessons__result">
+                                            <div class="course_lessons__dot"></div>
+                                            <h4>Зможете створити основу для подальшого просування у вибраній ніші з допомогою AI.</h4>
+                                        </div>
+                                    </div>
+                                    <div class="btn course_lessons__button">
+                                        <a href="#format">Забронювати місце на курс</a>
+                                    </div>
                                 </div>
-                                <div class="course_lessons__results">
-                                    <h3>В результаті навчання ви:</h3>
-                                    <div class="course_lessons__result">
-                                        <div class="course_lessons__dot"></div>
-                                        <h4>Ви зрозумієте, як працює GPT і які завдання він може вирішувати у різних сферах.</h4>
+                                <div data-about="22" class="course_lessons__about">
+                                    <div class="course_lessons__title">Про що урок:</div>
+                                    <div class="course_lessons__description">
+                                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut cum rerum distinctio quod laudantium nihil sequi odio. Itaque, facere vero in quisquam error facilis tempora quidem. In, ipsa. Ipsam veniam eveniet tempora, obcaecati voluptatum quis corporis placeat, deserunt numquam odit, autem iure quas perferendis commodi?</p>
                                     </div>
-                                    <div class="course_lessons__result">
-                                        <div class="course_lessons__dot"></div>
-                                        <h4>Навчитесь визначати та обирати нішу, яка найкраще підходить саме вам.</h4>
+                                    <div class="course_lessons__results">
+                                        <h3>В результаті навчання ви:</h3>
+                                        <div class="course_lessons__result">
+                                            <div class="course_lessons__dot"></div>
+                                            <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas iure quibusdam unde?</h4>
+                                        </div>
+                                        <div class="course_lessons__result">
+                                            <div class="course_lessons__dot"></div>
+                                            <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat quidem voluptate alias quia, id ut in, nostrum voluptatibus autem quis magni asperiores.</h4>
+                                        </div>
+                                        <div class="course_lessons__result">
+                                            <div class="course_lessons__dot"></div>
+                                            <h4>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi, deserunt!</h4>
+                                        </div>
                                     </div>
-                                    <div class="course_lessons__result">
-                                        <div class="course_lessons__dot"></div>
-                                        <h4>Зможете створити основу для подальшого просування у вибраній ніші з допомогою AI.</h4>
+                                    <div class="btn course_lessons__button">
+                                        <a href="#format">Забронювати місце на курс</a>
                                     </div>
                                 </div>
-                                <div class="btn course_lessons__button">
-                                    <a href="#format">Забронювати місце на курс</a>
+                                <div data-about="23" class="course_lessons__about">
+                                    <div class="course_lessons__title">Про що урок:</div>
+                                    <div class="course_lessons__description">
+                                        <p>На цьому уроці ви дізнаєтесь, як працює ChatGPT і які можливості він відкриває для створення контенту, роботи в соціальних мережах та вирішення бізнес-завдань. Основна увага приділяється вибору ніші для вашої діяльності — це допоможе ефективніше застосовувати інструменти штучного інтелекту та будувати стратегію розвитку.</p>
+                                    </div>
+                                    <div class="course_lessons__results">
+                                        <h3>В результаті навчання ви:</h3>
+                                        <div class="course_lessons__result">
+                                            <div class="course_lessons__dot"></div>
+                                            <h4>Ви зрозумієте, як працює GPT і які завдання він може вирішувати у різних сферах.</h4>
+                                        </div>
+                                        <div class="course_lessons__result">
+                                            <div class="course_lessons__dot"></div>
+                                            <h4>Навчитесь визначати та обирати нішу, яка найкраще підходить саме вам.</h4>
+                                        </div>
+                                        <div class="course_lessons__result">
+                                            <div class="course_lessons__dot"></div>
+                                            <h4>Зможете створити основу для подальшого просування у вибраній ніші з допомогою AI.</h4>
+                                        </div>
+                                    </div>
+                                    <div class="btn course_lessons__button">
+                                        <a href="#format">Забронювати місце на курс</a>
+                                    </div>
+                                </div>
+                                <div data-about="24" class="course_lessons__about">
+                                    <div class="course_lessons__title">Про що урок:</div>
+                                    <div class="course_lessons__description">
+                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque quis accusamus, minima libero quia nisi doloribus recusandae eligendi temporibus. Illum rem enim quidem dolorum. Repellat quia ipsum quas!</p>
+                                    </div>
+                                    <div class="course_lessons__results">
+                                        <h3>В результаті навчання ви:</h3>
+                                        <div class="course_lessons__result">
+                                            <div class="course_lessons__dot"></div>
+                                            <h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis expedita odio ratione eveniet provident? Exercitationem.</h4>
+                                        </div>
+                                        <div class="course_lessons__result">
+                                            <div class="course_lessons__dot"></div>
+                                            <h4>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus fugiat odit molestiae?</h4>
+                                        </div>
+                                        <div class="course_lessons__result">
+                                            <div class="course_lessons__dot"></div>
+                                            <h4>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi vitae possimus aliquid nobis. Eos, dolor facere!</h4>
+                                        </div>
+                                    </div>
+                                    <div class="btn course_lessons__button">
+                                        <a href="#format">Забронювати місце на курс</a>
+                                    </div>
+                                </div>
+                                <div data-about="25" class="course_lessons__about">
+                                    <div class="course_lessons__title">Про що урок:</div>
+                                    <div class="course_lessons__description">
+                                        <p>На цьому уроці ви дізнаєтесь, як працює ChatGPT і які можливості він відкриває для створення контенту, роботи в соціальних мережах та вирішення бізнес-завдань. Основна увага приділяється вибору ніші для вашої діяльності — це допоможе ефективніше застосовувати інструменти штучного інтелекту та будувати стратегію розвитку.</p>
+                                    </div>
+                                    <div class="course_lessons__results">
+                                        <h3>В результаті навчання ви:</h3>
+                                        <div class="course_lessons__result">
+                                            <div class="course_lessons__dot"></div>
+                                            <h4>Ви зрозумієте, як працює GPT і які завдання він може вирішувати у різних сферах.</h4>
+                                        </div>
+                                        <div class="course_lessons__result">
+                                            <div class="course_lessons__dot"></div>
+                                            <h4>Навчитесь визначати та обирати нішу, яка найкраще підходить саме вам.</h4>
+                                        </div>
+                                        <div class="course_lessons__result">
+                                            <div class="course_lessons__dot"></div>
+                                            <h4>Зможете створити основу для подальшого просування у вибраній ніші з допомогою AI.</h4>
+                                        </div>
+                                    </div>
+                                    <div class="btn course_lessons__button">
+                                        <a href="#format">Забронювати місце на курс</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -447,55 +643,153 @@
                                 <div class="course_lessons__title">Уроки модулю</div>
                                 <ul class="course_lessons__list">
                                     <li class="course_lessons__item active">
-                                        <button class="course_lessons__btn">
-                                            <span>21 / </span> Вступ до GPT та вибір ніші
+                                        <button data-lesson="31" class="course_lessons__btn">
+                                            <span>31 / </span> Вступ до GPT та вибір ніші
                                         </button>
                                     </li>
                                     <li class="course_lessons__item">
-                                        <button class="course_lessons__btn">
-                                            <span>22 / </span> Аналіз конкурентів з допомогою ШІ
+                                        <button data-lesson="32" class="course_lessons__btn">
+                                            <span>32 / </span> Аналіз конкурентів з допомогою ШІ
                                         </button>
                                     </li>
                                     <li class="course_lessons__item">
-                                        <button class="course_lessons__btn">
-                                            <span>23 / </span> Побудова контент-плану
+                                        <button data-lesson="33" class="course_lessons__btn">
+                                            <span>33 / </span> Побудова контент-плану
                                         </button>
                                     </li>
                                     <li class="course_lessons__item">
-                                        <button class="course_lessons__btn">
-                                            <span>24 / </span> Сторітейлінг зі штучним інтелектом
+                                        <button data-lesson="34" class="course_lessons__btn">
+                                            <span>34 / </span> Сторітейлінг зі штучним інтелектом
                                         </button>
                                     </li>
                                     <li class="course_lessons__item">
-                                        <button class="course_lessons__btn">
-                                            <span>25 / </span> Оптимізація сторіс
+                                        <button data-lesson="35" class="course_lessons__btn">
+                                            <span>35 / </span> Оптимізація сторіс
                                         </button>
                                     </li>
                                 </ul>
                             </div>
 
-                            <div class="course_lessons__about">
-                                <div class="course_lessons__title">Про що урок:</div>
-                                <div class="course_lessons__description">
-                                    <p>На цьому уроці ви дізнаєтесь, як працює ChatGPT і які можливості він відкриває для створення контенту, роботи в соціальних мережах та вирішення бізнес-завдань. Основна увага приділяється вибору ніші для вашої діяльності — це допоможе ефективніше застосовувати інструменти штучного інтелекту та будувати стратегію розвитку.</p>
+                            <div class="course_lessons__abouts">
+                                <div data-about="31" class="course_lessons__about active">
+                                    <div class="course_lessons__title">Про що урок:</div>
+                                    <div class="course_lessons__description">
+                                        <p>На цьому уроці ви дізнаєтесь, як працює ChatGPT і які можливості він відкриває для створення контенту, роботи в соціальних мережах та вирішення бізнес-завдань. Основна увага приділяється вибору ніші для вашої діяльності — це допоможе ефективніше застосовувати інструменти штучного інтелекту та будувати стратегію розвитку.</p>
+                                    </div>
+                                    <div class="course_lessons__results">
+                                        <h3>В результаті навчання ви:</h3>
+                                        <div class="course_lessons__result">
+                                            <div class="course_lessons__dot"></div>
+                                            <h4>Ви зрозумієте, як працює GPT і які завдання він може вирішувати у різних сферах.</h4>
+                                        </div>
+                                        <div class="course_lessons__result">
+                                            <div class="course_lessons__dot"></div>
+                                            <h4>Навчитесь визначати та обирати нішу, яка найкраще підходить саме вам.</h4>
+                                        </div>
+                                        <div class="course_lessons__result">
+                                            <div class="course_lessons__dot"></div>
+                                            <h4>Зможете створити основу для подальшого просування у вибраній ніші з допомогою AI.</h4>
+                                        </div>
+                                    </div>
+                                    <div class="btn course_lessons__button">
+                                        <a href="#format">Забронювати місце на курс</a>
+                                    </div>
                                 </div>
-                                <div class="course_lessons__results">
-                                    <h3>В результаті навчання ви:</h3>
-                                    <div class="course_lessons__result">
-                                        <div class="course_lessons__dot"></div>
-                                        <h4>Ви зрозумієте, як працює GPT і які завдання він може вирішувати у різних сферах.</h4>
+                                <div data-about="32" class="course_lessons__about">
+                                    <div class="course_lessons__title">Про що урок:</div>
+                                    <div class="course_lessons__description">
+                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam dolor quae, eveniet sint assumenda rem commodi tempore blanditiis pariatur, quod quaerat voluptatibus. Nesciunt, quibusdam. Libero unde cupiditate amet dignissimos et accusantium iste reprehenderit molestias, nesciunt alias impedit aliquam inventore provident incidunt temporibus, animi numquam. Voluptates corrupti sint dolorem aperiam, unde facere, quaerat delectus quos perspiciatis eum soluta quo voluptate nostrum?</p>
                                     </div>
-                                    <div class="course_lessons__result">
-                                        <div class="course_lessons__dot"></div>
-                                        <h4>Навчитесь визначати та обирати нішу, яка найкраще підходить саме вам.</h4>
+                                    <div class="course_lessons__results">
+                                        <h3>В результаті навчання ви:</h3>
+                                        <div class="course_lessons__result">
+                                            <div class="course_lessons__dot"></div>
+                                            <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa error repellendus perspiciatis cupiditate reprehenderit nisi..</h4>
+                                        </div>
+                                        <div class="course_lessons__result">
+                                            <div class="course_lessons__dot"></div>
+                                            <h4>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Natus, dicta a!</h4>
+                                        </div>
+                                        <div class="course_lessons__result">
+                                            <div class="course_lessons__dot"></div>
+                                            <h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem provident iste nulla ut?</h4>
+                                        </div>
                                     </div>
-                                    <div class="course_lessons__result">
-                                        <div class="course_lessons__dot"></div>
-                                        <h4>Зможете створити основу для подальшого просування у вибраній ніші з допомогою AI.</h4>
+                                    <div class="btn course_lessons__button">
+                                        <a href="#format">Забронювати місце на курс</a>
                                     </div>
                                 </div>
-                                <div class="btn course_lessons__button">
-                                    <a href="#format">Забронювати місце на курс</a>
+                                <div data-about="33" class="course_lessons__about">
+                                    <div class="course_lessons__title">Про що урок:</div>
+                                    <div class="course_lessons__description">
+                                        <p>На цьому уроці ви дізнаєтесь, як працює ChatGPT і які можливості він відкриває для створення контенту, роботи в соціальних мережах та вирішення бізнес-завдань. Основна увага приділяється вибору ніші для вашої діяльності — це допоможе ефективніше застосовувати інструменти штучного інтелекту та будувати стратегію розвитку.</p>
+                                    </div>
+                                    <div class="course_lessons__results">
+                                        <h3>В результаті навчання ви:</h3>
+                                        <div class="course_lessons__result">
+                                            <div class="course_lessons__dot"></div>
+                                            <h4>Ви зрозумієте, як працює GPT і які завдання він може вирішувати у різних сферах.</h4>
+                                        </div>
+                                        <div class="course_lessons__result">
+                                            <div class="course_lessons__dot"></div>
+                                            <h4>Навчитесь визначати та обирати нішу, яка найкраще підходить саме вам.</h4>
+                                        </div>
+                                        <div class="course_lessons__result">
+                                            <div class="course_lessons__dot"></div>
+                                            <h4>Зможете створити основу для подальшого просування у вибраній ніші з допомогою AI.</h4>
+                                        </div>
+                                    </div>
+                                    <div class="btn course_lessons__button">
+                                        <a href="#format">Забронювати місце на курс</a>
+                                    </div>
+                                </div>
+                                <div data-about="34" class="course_lessons__about">
+                                    <div class="course_lessons__title">Про що урок:</div>
+                                    <div class="course_lessons__description">
+                                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quaerat qui eum harum inventore! Tempore necessitatibus amet, incidunt repudiandae impedit ad ea iure provident porro quibusdam laborum, dolores explicabo, dolore nisi?</p>
+                                    </div>
+                                    <div class="course_lessons__results">
+                                        <h3>В результаті навчання ви:</h3>
+                                        <div class="course_lessons__result">
+                                            <div class="course_lessons__dot"></div>
+                                            <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim doloribus fuga ab tenetur assumenda dolorem iure ullam eaque!</h4>
+                                        </div>
+                                        <div class="course_lessons__result">
+                                            <div class="course_lessons__dot"></div>
+                                            <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae rem ducimus consectetur omnis?</h4>
+                                        </div>
+                                        <div class="course_lessons__result">
+                                            <div class="course_lessons__dot"></div>
+                                            <h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste earum praesentium eius quam velit iusto rem!</h4>
+                                        </div>
+                                    </div>
+                                    <div class="btn course_lessons__button">
+                                        <a href="#format">Забронювати місце на курс</a>
+                                    </div>
+                                </div>
+                                <div data-about="35" class="course_lessons__about">
+                                    <div class="course_lessons__title">Про що урок:</div>
+                                    <div class="course_lessons__description">
+                                        <p>На цьому уроці ви дізнаєтесь, як працює ChatGPT і які можливості він відкриває для створення контенту, роботи в соціальних мережах та вирішення бізнес-завдань. Основна увага приділяється вибору ніші для вашої діяльності — це допоможе ефективніше застосовувати інструменти штучного інтелекту та будувати стратегію розвитку.</p>
+                                    </div>
+                                    <div class="course_lessons__results">
+                                        <h3>В результаті навчання ви:</h3>
+                                        <div class="course_lessons__result">
+                                            <div class="course_lessons__dot"></div>
+                                            <h4>Ви зрозумієте, як працює GPT і які завдання він може вирішувати у різних сферах.</h4>
+                                        </div>
+                                        <div class="course_lessons__result">
+                                            <div class="course_lessons__dot"></div>
+                                            <h4>Навчитесь визначати та обирати нішу, яка найкраще підходить саме вам.</h4>
+                                        </div>
+                                        <div class="course_lessons__result">
+                                            <div class="course_lessons__dot"></div>
+                                            <h4>Зможете створити основу для подальшого просування у вибраній ніші з допомогою AI.</h4>
+                                        </div>
+                                    </div>
+                                    <div class="btn course_lessons__button">
+                                        <a href="#format">Забронювати місце на курс</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -544,55 +838,153 @@
                                 <div class="course_lessons__title">Уроки модулю</div>
                                 <ul class="course_lessons__list">
                                     <li class="course_lessons__item active">
-                                        <button class="course_lessons__btn">
-                                            <span>21 / </span> Вступ до GPT та вибір ніші
+                                        <button data-lesson="41" class="course_lessons__btn">
+                                            <span>41 / </span> Вступ до GPT та вибір ніші
                                         </button>
                                     </li>
                                     <li class="course_lessons__item">
-                                        <button class="course_lessons__btn">
-                                            <span>22 / </span> Аналіз конкурентів з допомогою ШІ
+                                        <button data-lesson="42" class="course_lessons__btn">
+                                            <span>42 / </span> Аналіз конкурентів з допомогою ШІ
                                         </button>
                                     </li>
                                     <li class="course_lessons__item">
-                                        <button class="course_lessons__btn">
-                                            <span>23 / </span> Побудова контент-плану
+                                        <button data-lesson="43" class="course_lessons__btn">
+                                            <span>43 / </span> Побудова контент-плану
                                         </button>
                                     </li>
                                     <li class="course_lessons__item">
-                                        <button class="course_lessons__btn">
-                                            <span>24 / </span> Сторітейлінг зі штучним інтелектом
+                                        <button data-lesson="44" class="course_lessons__btn">
+                                            <span>44 / </span> Сторітейлінг зі штучним інтелектом
                                         </button>
                                     </li>
                                     <li class="course_lessons__item">
-                                        <button class="course_lessons__btn">
-                                            <span>25 / </span> Оптимізація сторіс
+                                        <button data-lesson="45" class="course_lessons__btn">
+                                            <span>45 / </span> Оптимізація сторіс
                                         </button>
                                     </li>
                                 </ul>
                             </div>
 
-                            <div class="course_lessons__about">
-                                <div class="course_lessons__title">Про що урок:</div>
-                                <div class="course_lessons__description">
-                                    <p>На цьому уроці ви дізнаєтесь, як працює ChatGPT і які можливості він відкриває для створення контенту, роботи в соціальних мережах та вирішення бізнес-завдань. Основна увага приділяється вибору ніші для вашої діяльності — це допоможе ефективніше застосовувати інструменти штучного інтелекту та будувати стратегію розвитку.</p>
+                            <div class="course_lessons__abouts">
+                                <div data-about="41" class="course_lessons__about active">
+                                    <div class="course_lessons__title">Про що урок:</div>
+                                    <div class="course_lessons__description">
+                                        <p>На цьому уроці ви дізнаєтесь, як працює ChatGPT і які можливості він відкриває для створення контенту, роботи в соціальних мережах та вирішення бізнес-завдань. Основна увага приділяється вибору ніші для вашої діяльності — це допоможе ефективніше застосовувати інструменти штучного інтелекту та будувати стратегію розвитку.</p>
+                                    </div>
+                                    <div class="course_lessons__results">
+                                        <h3>В результаті навчання ви:</h3>
+                                        <div class="course_lessons__result">
+                                            <div class="course_lessons__dot"></div>
+                                            <h4>Ви зрозумієте, як працює GPT і які завдання він може вирішувати у різних сферах.</h4>
+                                        </div>
+                                        <div class="course_lessons__result">
+                                            <div class="course_lessons__dot"></div>
+                                            <h4>Навчитесь визначати та обирати нішу, яка найкраще підходить саме вам.</h4>
+                                        </div>
+                                        <div class="course_lessons__result">
+                                            <div class="course_lessons__dot"></div>
+                                            <h4>Зможете створити основу для подальшого просування у вибраній ніші з допомогою AI.</h4>
+                                        </div>
+                                    </div>
+                                    <div class="btn course_lessons__button">
+                                        <a href="#format">Забронювати місце на курс</a>
+                                    </div>
                                 </div>
-                                <div class="course_lessons__results">
-                                    <h3>В результаті навчання ви:</h3>
-                                    <div class="course_lessons__result">
-                                        <div class="course_lessons__dot"></div>
-                                        <h4>Ви зрозумієте, як працює GPT і які завдання він може вирішувати у різних сферах.</h4>
+                                <div data-about="42" class="course_lessons__about">
+                                    <div class="course_lessons__title">Про що урок:</div>
+                                    <div class="course_lessons__description">
+                                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio odio corrupti dolores laudantium similique debitis ab, esse sapiente saepe perferendis beatae sit! Architecto voluptates nesciunt quibusdam rem molestias, quia temporibus sequi esse ea quam placeat nostrum non explicabo eveniet itaque pariatur. Rerum at, impedit tenetur pariatur vel laborum.</p>
                                     </div>
-                                    <div class="course_lessons__result">
-                                        <div class="course_lessons__dot"></div>
-                                        <h4>Навчитесь визначати та обирати нішу, яка найкраще підходить саме вам.</h4>
+                                    <div class="course_lessons__results">
+                                        <h3>В результаті навчання ви:</h3>
+                                        <div class="course_lessons__result">
+                                            <div class="course_lessons__dot"></div>
+                                            <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, fugit. Repellat eligendi iure placeat porro.</h4>
+                                        </div>
+                                        <div class="course_lessons__result">
+                                            <div class="course_lessons__dot"></div>
+                                            <h4>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Libero nihil ea ratione aperiam debitis vitae doloribus.</h4>
+                                        </div>
+                                        <div class="course_lessons__result">
+                                            <div class="course_lessons__dot"></div>
+                                            <h4>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores, illo distinctio?</h4>
+                                        </div>
                                     </div>
-                                    <div class="course_lessons__result">
-                                        <div class="course_lessons__dot"></div>
-                                        <h4>Зможете створити основу для подальшого просування у вибраній ніші з допомогою AI.</h4>
+                                    <div class="btn course_lessons__button">
+                                        <a href="#format">Забронювати місце на курс</a>
                                     </div>
                                 </div>
-                                <div class="btn course_lessons__button">
-                                    <a href="#format">Забронювати місце на курс</a>
+                                <div data-about="43" class="course_lessons__about">
+                                    <div class="course_lessons__title">Про що урок:</div>
+                                    <div class="course_lessons__description">
+                                        <p>На цьому уроці ви дізнаєтесь, як працює ChatGPT і які можливості він відкриває для створення контенту, роботи в соціальних мережах та вирішення бізнес-завдань. Основна увага приділяється вибору ніші для вашої діяльності — це допоможе ефективніше застосовувати інструменти штучного інтелекту та будувати стратегію розвитку.</p>
+                                    </div>
+                                    <div class="course_lessons__results">
+                                        <h3>В результаті навчання ви:</h3>
+                                        <div class="course_lessons__result">
+                                            <div class="course_lessons__dot"></div>
+                                            <h4>Ви зрозумієте, як працює GPT і які завдання він може вирішувати у різних сферах.</h4>
+                                        </div>
+                                        <div class="course_lessons__result">
+                                            <div class="course_lessons__dot"></div>
+                                            <h4>Навчитесь визначати та обирати нішу, яка найкраще підходить саме вам.</h4>
+                                        </div>
+                                        <div class="course_lessons__result">
+                                            <div class="course_lessons__dot"></div>
+                                            <h4>Зможете створити основу для подальшого просування у вибраній ніші з допомогою AI.</h4>
+                                        </div>
+                                    </div>
+                                    <div class="btn course_lessons__button">
+                                        <a href="#format">Забронювати місце на курс</a>
+                                    </div>
+                                </div>
+                                <div data-about="44" class="course_lessons__about">
+                                    <div class="course_lessons__title">Про що урок:</div>
+                                    <div class="course_lessons__description">
+                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum aspernatur voluptate explicabo labore vitae nesciunt nostrum iste laudantium, repellendus consequuntur sequi, dolores praesentium officia quaerat velit rem quos provident corporis, magnam aperiam! Officiis nobis magnam sapiente impedit expedita eius qui? At, obcaecati!</p>
+                                    </div>
+                                    <div class="course_lessons__results">
+                                        <h3>В результаті навчання ви:</h3>
+                                        <div class="course_lessons__result">
+                                            <div class="course_lessons__dot"></div>
+                                            <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro aspernatur dolor esse.</h4>
+                                        </div>
+                                        <div class="course_lessons__result">
+                                            <div class="course_lessons__dot"></div>
+                                            <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores natus quibusdam voluptatum labore.</h4>
+                                        </div>
+                                        <div class="course_lessons__result">
+                                            <div class="course_lessons__dot"></div>
+                                            <h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa possimus error quis laudantium quaerat atque!</h4>
+                                        </div>
+                                    </div>
+                                    <div class="btn course_lessons__button">
+                                        <a href="#format">Забронювати місце на курс</a>
+                                    </div>
+                                </div>
+                                <div data-about="45" class="course_lessons__about">
+                                    <div class="course_lessons__title">Про що урок:</div>
+                                    <div class="course_lessons__description">
+                                        <p>На цьому уроці ви дізнаєтесь, як працює ChatGPT і які можливості він відкриває для створення контенту, роботи в соціальних мережах та вирішення бізнес-завдань. Основна увага приділяється вибору ніші для вашої діяльності — це допоможе ефективніше застосовувати інструменти штучного інтелекту та будувати стратегію розвитку.</p>
+                                    </div>
+                                    <div class="course_lessons__results">
+                                        <h3>В результаті навчання ви:</h3>
+                                        <div class="course_lessons__result">
+                                            <div class="course_lessons__dot"></div>
+                                            <h4>Ви зрозумієте, як працює GPT і які завдання він може вирішувати у різних сферах.</h4>
+                                        </div>
+                                        <div class="course_lessons__result">
+                                            <div class="course_lessons__dot"></div>
+                                            <h4>Навчитесь визначати та обирати нішу, яка найкраще підходить саме вам.</h4>
+                                        </div>
+                                        <div class="course_lessons__result">
+                                            <div class="course_lessons__dot"></div>
+                                            <h4>Зможете створити основу для подальшого просування у вибраній ніші з допомогою AI.</h4>
+                                        </div>
+                                    </div>
+                                    <div class="btn course_lessons__button">
+                                        <a href="#format">Забронювати місце на курс</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -605,7 +997,7 @@
         </div>
     </section>
 
-    <section id="packages" class="packages">
+    <section data-section="packages" id="packages" class="packages">
          <div class="packages_rounds packages_rounds__first"></div>
         <div class="container packages_container">
             <h2 class="title packages_title">
@@ -697,13 +1089,13 @@
         <div class="container timer_container">
              <div class="timer_questions">
                 <div class="timer_questions__item timer_questions__first">
-                    <img src="./assets/png/question_sign.png" alt="question sign">
+                    <img src="./assets/png/question_sign.png" alt="question sign" loading="lazy">
                 </div>
                 <div class="timer_questions__item  timer_questions__second">
-                    <img src="./assets/png/question_middle.png" alt="question sign">
+                    <img src="./assets/png/question_middle.png" alt="question sign" loading="lazy">
                 </div>
                 <div class="timer_questions__item  timer_questions__third">
-                    <img src="./assets/png/question_big.png" alt="question sign">
+                    <img src="./assets/png/question_big.png" alt="question sign" loading="lazy">
                 </div>
             </div>
             <div class="clock timer_dial">
@@ -743,7 +1135,7 @@
             </div>
             <div class="timer_gift">
                 <div class="timer_gift__img">
-                    <img src="./assets/png/gift.png" alt="gift">
+                    <img src="./assets/png/gift.png" alt="gift" loading="lazy">
                 </div>
                 <h3 class="timer_gift__description">
                     <span>Бонус при купівлі курсу — </span> дочекайся дзвінка менеджера
@@ -752,7 +1144,7 @@
         </div>
     </section>
 
-    <section id="format" class="format">
+    <section data-section="format" id="format" class="format">
         <div class="container format_container">
             <div class="format_grid">
                 <div class="format_grid__top">
@@ -854,14 +1246,17 @@
 
     <section id="payments" class="payments">
         <div class="container payments_container">
+            <div class="payments_back">
+                <img src="./assets/png/bottom_figure.png" alt="strange figure" loading="lazy">
+            </div>
             <div class="payments_wrapper">
                 <div class="payments_left">
-                    <h2 class="title payments_left__title"><span>Розстрочка без переплат </span>від Genius.Space</h2>
+                    <h2 class="title payments_left__title"><span>Розстрочка<br> без переплат<br> </span>від Genius.Space</h2>
                     <h3 class="description payments_left__description">Почніть навчатися вже зараз, оплату робіть частинами.Комфортний формат розстрочки: <span>від 2 до 12 місяців*</span></h3>
                 </div>
                 <div class="payments_center">
-                    <h4 class="payments_center__title">Пропозиція діє до:</h4>
-                    <h2 class="payments_center__date"><span>14</span> лютого</h2>
+                    <h4 class="payments_center__title">Пропозиція<br> діє до:</h4>
+                    <h2 class="payments_center__date"><span>14</span><br> лютого</h2>
                 </div>
                 <div class="payments_right">
                     <h2 class="payments_right__title">Як отримати розстрочку?</h2>
@@ -929,7 +1324,7 @@
                         </div>
                         <div class="logo_bottom">
                             <img src="./assets/png/menu_logo_heart.png" alt="ukraine heart">
-                            <div>space</div>
+                            <h4>space</h4>
                         </div>
                     </div>
                     <address>
@@ -944,6 +1339,16 @@
                             </svg>
                         </a>
                         <a href="https://www.youtube.com/">
+                            <svg width="23" height="16" viewBox="0 0 23 16" fill="none">
+                                <path d="M22.0364 2.46506C21.7771 1.50114 21.0171 0.741302 20.0533 0.48175C18.2926 0 11.2497 0 11.2497 0C11.2497 0 4.20708 0 2.44638 0.463486C1.50114 0.722763 0.722626 1.50128 0.463348 2.46506C0 4.22562 0 7.87678 0 7.87678C0 7.87678 0 11.5464 0.463348 13.2885C0.7229 14.2523 1.4826 15.0121 2.44652 15.2717C4.22562 15.7536 11.25 15.7536 11.25 15.7536C11.25 15.7536 18.2926 15.7536 20.0533 15.2901C21.0173 15.0307 21.7771 14.2708 22.0366 13.3071C22.4999 11.5464 22.4999 7.89532 22.4999 7.89532C22.4999 7.89532 22.5184 4.22562 22.0364 2.46506ZM9.00741 11.2499V4.50371L14.864 7.87678L9.00741 11.2499Z" fill="white"/>
+                            </svg>
+                        </a>
+                        <a href="https://web.telegram.org/">
+                            <svg width="24" height="20" viewBox="0 0 24 20" fill="none">
+                                <path d="M9.41693 13.1814L9.01994 18.7654C9.58794 18.7654 9.83393 18.5214 10.1289 18.2284L12.7919 15.6834L18.3099 19.7244C19.3219 20.2884 20.0349 19.9914 20.3079 18.7934L23.9299 1.82141L23.9309 1.82041C24.2519 0.324405 23.3899 -0.260595 22.4039 0.106406L1.11393 8.25741C-0.339066 8.82141 -0.317066 9.63141 0.866934 9.99841L6.30993 11.6914L18.9529 3.78041C19.5479 3.38641 20.0889 3.60441 19.6439 3.99841L9.41693 13.1814Z" fill="white"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.instagram.com/">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
                                 <g clip-path="url(#clip0_1_2339)">
                                     <path d="M23.9765 7.05607C23.9203 5.78085 23.7141 4.90416 23.4186 4.14449C23.1139 3.33812 22.6451 2.61617 22.0308 2.01602C21.4306 1.40652 20.7039 0.932921 19.9069 0.632936C19.1428 0.337529 18.2707 0.131312 16.9955 0.0750879C15.7108 0.0141019 15.3029 0 12.0445 0C8.78603 0 8.37818 0.0141019 7.09821 0.0703262C5.82299 0.126551 4.9463 0.332951 4.18681 0.628174C3.38026 0.932922 2.65832 1.40176 2.05816 2.01602C1.44867 2.61617 0.975249 3.34288 0.67508 4.13991C0.379674 4.90416 0.173457 5.77609 0.117233 7.0513C0.0562466 8.33604 0.0421448 8.7439 0.0421448 12.0023C0.0421448 15.2608 0.0562466 15.6686 0.112471 16.9486C0.168695 18.2238 0.375095 19.1005 0.670502 19.8602C0.975249 20.6666 1.44867 21.3885 2.05816 21.9887C2.65832 22.5982 3.38502 23.0718 4.18205 23.3718C4.9463 23.6672 5.81823 23.8734 7.09363 23.9296C8.37342 23.986 8.78146 23.9999 12.0399 23.9999C15.2983 23.9999 15.7062 23.986 16.9862 23.9296C18.2614 23.8734 19.1381 23.6672 19.8976 23.3718C21.5105 22.7482 22.7857 21.4729 23.4093 19.8602C23.7045 19.096 23.9109 18.2238 23.9672 16.9486C24.0234 15.6686 24.0375 15.2608 24.0375 12.0023C24.0375 8.7439 24.0327 8.33604 23.9765 7.05607ZM21.8152 16.8549C21.7636 18.027 21.5667 18.6599 21.4026 19.0819C20.9993 20.1274 20.1695 20.9572 19.124 21.3605C18.702 21.5246 18.0645 21.7215 16.897 21.7729C15.6311 21.8293 15.2515 21.8433 12.0492 21.8433C8.84702 21.8433 8.46261 21.8293 7.20131 21.7729C6.02921 21.7215 5.39628 21.5246 4.97432 21.3605C4.45401 21.1682 3.98041 20.8634 3.596 20.4649C3.19748 20.0758 2.89274 19.6069 2.70044 19.0866C2.53634 18.6647 2.33947 18.027 2.288 16.8596C2.2316 15.5937 2.21768 15.2139 2.21768 12.0117C2.21768 8.80946 2.2316 8.42505 2.288 7.16394C2.33947 5.99183 2.53634 5.3589 2.70044 4.93694C2.89274 4.41645 3.19748 3.94303 3.60076 3.55843C3.98975 3.15992 4.45859 2.85517 4.97908 2.66306C5.40104 2.49896 6.03873 2.30209 7.20608 2.25044C8.47195 2.19422 8.85178 2.18011 12.0538 2.18011C15.2608 2.18011 15.6405 2.19422 16.9018 2.25044C18.0739 2.30209 18.7068 2.49896 19.1287 2.66306C19.649 2.85517 20.1227 3.15992 20.5071 3.55843C20.9056 3.94761 21.2103 4.41645 21.4026 4.93694C21.5667 5.3589 21.7636 5.99641 21.8152 7.16394C21.8715 8.42981 21.8856 8.80946 21.8856 12.0117C21.8856 15.2139 21.8715 15.589 21.8152 16.8549Z" fill="white"/>
@@ -955,16 +1360,6 @@
                                         <rect width="24" height="24" fill="white"/>
                                     </clipPath>
                                 </defs>
-                            </svg>
-                        </a>
-                        <a href="https://web.telegram.org/">
-                            <svg width="24" height="20" viewBox="0 0 24 20" fill="none">
-                                <path d="M9.41693 13.1814L9.01994 18.7654C9.58794 18.7654 9.83393 18.5214 10.1289 18.2284L12.7919 15.6834L18.3099 19.7244C19.3219 20.2884 20.0349 19.9914 20.3079 18.7934L23.9299 1.82141L23.9309 1.82041C24.2519 0.324405 23.3899 -0.260595 22.4039 0.106406L1.11393 8.25741C-0.339066 8.82141 -0.317066 9.63141 0.866934 9.99841L6.30993 11.6914L18.9529 3.78041C19.5479 3.38641 20.0889 3.60441 19.6439 3.99841L9.41693 13.1814Z" fill="white"/>
-                            </svg>
-                        </a>
-                        <a href="https://www.instagram.com/">
-                            <svg width="23" height="16" viewBox="0 0 23 16" fill="none">
-                                <path d="M22.0364 2.46506C21.7771 1.50114 21.0171 0.741302 20.0533 0.48175C18.2926 0 11.2497 0 11.2497 0C11.2497 0 4.20708 0 2.44638 0.463486C1.50114 0.722763 0.722626 1.50128 0.463348 2.46506C0 4.22562 0 7.87678 0 7.87678C0 7.87678 0 11.5464 0.463348 13.2885C0.7229 14.2523 1.4826 15.0121 2.44652 15.2717C4.22562 15.7536 11.25 15.7536 11.25 15.7536C11.25 15.7536 18.2926 15.7536 20.0533 15.2901C21.0173 15.0307 21.7771 14.2708 22.0366 13.3071C22.4999 11.5464 22.4999 7.89532 22.4999 7.89532C22.4999 7.89532 22.5184 4.22562 22.0364 2.46506ZM9.00741 11.2499V4.50371L14.864 7.87678L9.00741 11.2499Z" fill="white"/>
                             </svg>
                         </a>
                     </div>
@@ -984,9 +1379,9 @@
                     <h3 class="footer_title footer_right__title">Контакти</h3>
                     <address>
                         Україна, Київ, Майдан Незалежності, 2,<br>Spaces Maidan Plaza, 02000
-                    </address>
-                    <a href="tel:+74952410787">+7 495 241 07 87 (Росія),</a>
-                    <a href="tel:+380442371318">+38 044 237 13 18 (Україна),</a>
+                    </address><br>
+                    <a href="tel:+74952410787">+7 495 241 07 87 (Росія),</a><br>
+                    <a href="tel:+380442371318">+38 044 237 13 18 (Україна),</a><br>
                     <a href="https://info@geniusmarketing.me">info@geniusmarketing.me</a>
                 </div>
             </div>
