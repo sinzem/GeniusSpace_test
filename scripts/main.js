@@ -6,7 +6,7 @@ fetch('db.json')
     .then((data) => {
         renderFormats(data);
         timers.forEach(timer => setClock(timer, data.deadline.date));
-        // setPromotionPeriod(data.promotion);
+        setPromotionPeriod(data.promotion);
     })
     .catch((e) => console.log(e));
 
@@ -18,7 +18,6 @@ const observedSections = document.querySelectorAll("[data-section]");
 const hamburger = document.querySelector(".hamburger");
 
 if (windowWidth > 991) menu.classList.add("active");
-console.log(windowWidth);
 
 class HideMenu {
     scrollPrev = 0;
@@ -40,28 +39,28 @@ class HideMenu {
 const throttledHideMenu = throttle(new HideMenu().hider, 120);
 window.addEventListener("scroll", () => throttledHideMenu(this.scrollY, menu, windowWidth));
 
-// const observer = new IntersectionObserver((entries) => {
-//     entries.forEach(entry => {
-//         if (entry.isIntersecting) {
-//             menuItems.forEach(item => {
-//                 item.dataset.menu === entry.target.dataset.section
-//                     ? item.classList.add("active")
-//                     : item.classList.remove("active");
-//             })
-//             entry.target.dataset.section === "format" ? menuBtn.classList.add("active") : null;
-//         } else {
-//             menuItems.forEach(item => {
-//                 if (item.dataset.menu === entry.target.dataset.section) item.classList.remove("active");
-//                 menuBtn.classList.remove("active");
-//             })
-//         }
-//     });
-// }, {
-//     rootMargin: `0px 0px 0px 0px`,
-//     threshold: 0.51,
-// });
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            menuItems.forEach(item => {
+                item.dataset.menu === entry.target.dataset.section
+                    ? item.classList.add("active")
+                    : item.classList.remove("active");
+            })
+            entry.target.dataset.section === "format" ? menuBtn.classList.add("active") : null;
+        } else {
+            menuItems.forEach(item => {
+                if (item.dataset.menu === entry.target.dataset.section) item.classList.remove("active");
+                menuBtn.classList.remove("active");
+            })
+        }
+    });
+}, {
+    rootMargin: `-50% 0px -49% 0px`,
+    threshold: 0,
+});
 
-// observedSections.forEach(section => observer.observe(section));
+observedSections.forEach(section => observer.observe(section));
 
 hamburger.addEventListener("click", () => {
     if (hamburger.classList.contains("active")) {
@@ -75,7 +74,8 @@ hamburger.addEventListener("click", () => {
 
 menuBtn.addEventListener("click", () => windowWidth < 992 ? hideMenu() : null);
 
-menuItems.forEach(item => item.addEventListener("click", () => windowWidth < 992 ? hideMenu() : null))
+menuItems.forEach(item => item.addEventListener("click", () => windowWidth < 992 ? hideMenu() : null));
+
 // speakers=========================================
 const speakers = document.querySelectorAll(".header_grid__speakers div");
 
@@ -89,48 +89,47 @@ speakers.forEach((speaker, i) => {
 })
 
 // courses_block====================================
-// const courses = document.querySelectorAll(".course_module");
-// const coursesBtns = document.querySelectorAll(".course_module__btn"); 
-// const lessonBlocks = document.querySelectorAll(".course_lessons");
-// const lessonAbouts = document.querySelectorAll("[data-about]");
+const courses = document.querySelectorAll(".course_module");
+const coursesBtns = document.querySelectorAll(".course_module__btn"); 
+const lessonBlocks = document.querySelectorAll(".course_lessons");
+const lessonAbouts = document.querySelectorAll("[data-about]");
 
-// coursesBtns.forEach((btn, i) => {
-//     btn.addEventListener("click", () => { 
-//         if (!courses[i].classList.contains("active")) {
-//             courses[i].classList.add("active");
-//             btn.innerHTML = "Менше";
-//         } else {
-//             courses[i].classList.remove("active");
-//             btn.innerHTML = "Бiльше";
-//         }
-//     })
-// });
+coursesBtns.forEach((btn, i) => {
+    btn.addEventListener("click", () => { 
+        if (!courses[i].classList.contains("active")) {
+            courses[i].classList.add("active");
+            btn.innerHTML = "Менше";
+        } else {
+            courses[i].classList.remove("active");
+            btn.innerHTML = "Бiльше";
+        }
+    })
+});
 
-// lessonBlocks.forEach(block => {
-//     block.addEventListener("click", (e) => {
-//         if (e.target.nodeName === "BUTTON" && !e.target.parentElement.classList.contains("active")) {
-//             block.querySelectorAll(".course_lessons__item").forEach(item => item.classList.remove("active"));
-//             e.target.parentElement.classList.add("active");
-//             block.parentElement.querySelectorAll(".course_lessons__about").forEach(about => {
-//             about.dataset.about === e.target.dataset.lesson 
-//                 ? about.classList.add("active")
-//                 : about.classList.remove("active");
-//             })
-//         }
-//     })
-// });
+lessonBlocks.forEach(block => {
+    block.addEventListener("click", (e) => {
+        if (e.target.nodeName === "BUTTON" && !e.target.parentElement.classList.contains("active")) {
+            block.querySelectorAll(".course_lessons__item").forEach(item => item.classList.remove("active"));
+            e.target.parentElement.classList.add("active");
+            block.parentElement.querySelectorAll(".course_lessons__about").forEach(about => {
+            about.dataset.about === e.target.dataset.lesson 
+                ? about.classList.add("active")
+                : about.classList.remove("active");
+            })
+        }
+    })
+});
 
 // promotion_period=================================
 
-// const dateBlock = document.querySelector(".payments_center__date");
+const dateBlock = document.querySelector(".payments_center__date");
 
-// function setPromotionPeriod(obj) {
-//     const date = new Date(Date.now() + (1000 * 60 * 60 * 24 * +obj.duration));
-//     dateBlock.innerHTML = `<span>${date.getDate()}</span><br>${obj.months[date.getMonth()]}`;
-// }
+function setPromotionPeriod(obj) {
+    const date = new Date(Date.now() + (1000 * 60 * 60 * 24 * +obj.duration));
+    dateBlock.innerHTML = `<span>${date.getDate()}</span><br>${obj.months[date.getMonth()]}`;
+}
 
 // format-block=====================================
-const timers = document.querySelectorAll(".clock_body");
 const formatHeaders = document.querySelectorAll(".format_grid__plan");
 const rows = document.querySelector(".format_grid__rows");
 const prices = document.querySelectorAll(".format_price");
@@ -221,6 +220,7 @@ function priceBuilder(obj, deadline) {
 }
 
 // timer=============================================
+const timers = document.querySelectorAll(".clock_body"); 
 
 function getTimeRemaining(endtime) { 
     let days, hours, minutes, seconds;
